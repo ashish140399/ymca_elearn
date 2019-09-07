@@ -1,22 +1,16 @@
 <?php 
 session_start();
-$con = mysqli_connect("localhost","root","","ymca_user");
-
-// Check connection
-if (mysqli_connect_errno())
-{
-echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-
-
-?>
+include 'config.php';
+include 'signup.php';
+include 'login.php';
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>YMCA E-Learning</title>
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
-  		<link rel="stylesheet" type="text/css" href="style.css">
+  	<link rel="stylesheet" type="text/css" href="style.css">
   	<!-- bootstrap 4-->
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -65,30 +59,33 @@ echo "Failed to connect to MySQL: " . mysqli_connect_error();
 						<!------------SIGNUP------------------>
 						<form  action="index.php" class="form_signup" method="post">
 							<div class="d-flex justify-content-start my-2"  style="width: 100%">
-								<input class="form-control mr-2" type="" name="firstname"  placeholder="First name">
-								<input class="form-control " type="" name="lastname" placeholder="Last name" >
+								<input class="form-control mr-2" type="text" name="firstname"  placeholder="First name" required>
+								<input class="form-control " type="text" name="lastname" placeholder="Last name" >
 							</div>
 							<div class="d-flex justify-content-start my-2"  style="width: 100%">
-								<input class="form-control mr-2" type="" name="coursename" style="" placeholder="Course">
-								<input class="form-control " type="" name="streamname" placeholder="Stream" >
+								<input class="form-control mr-2" type="text" name="coursename" style="" placeholder="Course" required>
+								<input class="form-control " type="text" name="streamname" placeholder="Stream" required>
 							</div>
 							<div style="width: 100%">
-								<input class="form-control my-2" type="" name="rollno" placeholder="Roll no." >
-								<input class="form-control my-2" type="email" name="email" placeholder="Email">								<input class="form-control my-2" type="" name="password" placeholder="Password" >
-								<input class="form-control my-2" type="" name="cnfrmpassword" placeholder="Confirm Password" >
+								<input class="form-control my-2" type="text" name="rollno" placeholder="Roll no." required>
+								<input class="form-control my-2" type="email" name="email" placeholder="Email" required>					
+								<input class="form-control my-2" type="password" name="password" placeholder="Password" required>
+								<input class="form-control my-2" type="password" name="cnfrmpassword" placeholder="Confirm Password" required>
+								<div style="color: red;"><?php echo $pswrddntmatch?></div>
+								<div style="color: red;"><?php echo $email_already_registered?></div>
 							</div>
 							<div style="text-align: center;">	
-								<button type="submit" class="btn  btn-outline-info mt-2 mb-3">Sign Up</button>
+								<button type="submit" name="signup_btn" class="btn  btn-outline-info mt-2 mb-3">Sign Up</button>
 							</div>
 						</form>
-						<form  action="/action_page.php" class="form_login">
+						<form  action="index.php" class="form_login" method="post">
 							<div style="width: 100%">
-								<input class="form-control my-2" type="name" name="" placeholder="Email" >
-								<input class="form-control my-2" type="name" name="" placeholder="Password" >
+								<input class="form-control my-2" type="email" name="email" placeholder="Email" >
+								<input class="form-control my-2" type="password" name="password" placeholder="Password" >
 							</div>
 							<div><a href="">Forgot password</a></div>
 							<div style="text-align: center;">	
-								<button type="button" class="btn  btn-outline-info mt-2 mb-3">Log In</button>
+								<button type="submit" class="btn  btn-outline-info mt-2 mb-3" name="login_btn">Log In</button>
 							</div>
 						</form>
 					</div>

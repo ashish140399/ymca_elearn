@@ -1,7 +1,19 @@
+<?php 
+session_start();
+$con = mysqli_connect("localhost","root","","ymca_user");
+
+// Check connection
+if (mysqli_connect_errno())
+{
+echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>YMCA E-Learning</title>
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   		<link rel="stylesheet" type="text/css" href="style.css">
@@ -50,23 +62,23 @@
 						<div class="user_login_img">
 							<img src="login3.png">
 						</div>
-						<form  action="/action_page.php" class="form_signup" >
+						<!------------SIGNUP------------------>
+						<form  action="index.php" class="form_signup" method="post">
 							<div class="d-flex justify-content-start my-2"  style="width: 100%">
-								<input class="form-control mr-2" type="name" name="" style="" placeholder="First name">
-								<input class="form-control " type="name" name="" placeholder="Last name" >
+								<input class="form-control mr-2" type="" name="firstname"  placeholder="First name">
+								<input class="form-control " type="" name="lastname" placeholder="Last name" >
 							</div>
 							<div class="d-flex justify-content-start my-2"  style="width: 100%">
-								<input class="form-control mr-2" type="name" name="" style="" placeholder="Course">
-								<input class="form-control " type="name" name="" placeholder="Branch" >
+								<input class="form-control mr-2" type="" name="coursename" style="" placeholder="Course">
+								<input class="form-control " type="" name="streamname" placeholder="Stream" >
 							</div>
 							<div style="width: 100%">
-								<input class="form-control my-2" type="name" name="" placeholder="Roll no." >
-								<input class="form-control my-2" type="name" name="" placeholder="Email" >
-								<input class="form-control my-2" type="name" name="" placeholder="Password" >
-								<input class="form-control my-2" type="name" name="" placeholder="Confirm Password" >
+								<input class="form-control my-2" type="" name="rollno" placeholder="Roll no." >
+								<input class="form-control my-2" type="email" name="email" placeholder="Email">								<input class="form-control my-2" type="" name="password" placeholder="Password" >
+								<input class="form-control my-2" type="" name="cnfrmpassword" placeholder="Confirm Password" >
 							</div>
 							<div style="text-align: center;">	
-								<button type="button" class="btn  btn-outline-info mt-2 mb-3">Sign Up</button>
+								<button type="submit" class="btn  btn-outline-info mt-2 mb-3">Sign Up</button>
 							</div>
 						</form>
 						<form  action="/action_page.php" class="form_login">

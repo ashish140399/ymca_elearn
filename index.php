@@ -10,9 +10,9 @@ include 'login.php';
 	<title>YMCA E-Learning</title>
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel="stylesheet" type="text/css" href="style.css?ver=0.2">
+  	<link rel="stylesheet" type="text/css" href="style.css?ver=0.4">
   	<!-- bootstrap 4-->
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -79,6 +79,7 @@ include 'login.php';
 								<div style="color: red;"><?php echo $pswrddntmatch?></div>
 								<div style="color: red;"><?php echo $email_already_registered?></div>
 								<div style="color: red;"><?php echo $incorrectloginerror?></div>
+								<div style="color: green;"><?php echo $signup_done ?></div>
 							</div>
 							<div style="text-align: center;">	
 								<button type="submit" name="signup_btn" class="btn  btn-outline-info mt-2 mb-3">Sign Up</button>
@@ -89,9 +90,19 @@ include 'login.php';
 								<input class="form-control my-2" type="email" name="email" placeholder="Email" >
 								<input class="form-control my-2" type="password" name="password" placeholder="Password" >
 							</div>
-							<div><a href="">Forgot password</a></div>
+							<div><a class="forgot_password" name="forgot_password_clk" >Forgot password ?</a></div>
+							<div class="forgot_passwordinfo">If you have lost your password please send mail at <b>ashish140399@gmail.com</b></div>
 							<div style="text-align: center;">	
 								<button type="submit" class="btn  btn-outline-info mt-2 mb-3" name="login_btn">Log In</button>
+							</div>
+						</form>
+						<form  action="index.php" class="form_forgot_password" method="post">
+							<div style="width: 100%">
+								<input class="form-control my-2" type="email" name="email" placeholder="Enter your Email" >
+							</div>
+							<div class="forgot_passwordinfo">Enter you registered email above and We will send your password to your registered E-mail address shortly</div>
+							<div style="text-align: center;">	
+								<button type="submit" class="btn  btn-outline-info mt-2 mb-3" name="login_btn">Send</button>
 							</div>
 						</form>
 					</div>
@@ -108,6 +119,10 @@ include 'login.php';
 	$(".info_signup").click(function(){
 		$(".form_signup").show();
 		$(".form_login").hide();
+	});
+	$(".forgot_password").click(function(){
+		$(".forgot_passwordinfo").show();
+		$(".forgot_password").hide();
 	});
 </script>
 </body>

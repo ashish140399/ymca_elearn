@@ -1,6 +1,6 @@
 <?php 
  // define variables and set to empty values
-    $firstname = $email = $lastname = $course = $stream = $rollno = $password = $cnfrmpassword  = $username = $pswrddntmatch = $incorrectloginerror= "";
+    $firstname = $email = $lastname = $course = $stream = $rollno = $password = $cnfrmpassword  = $signup_done= $username = $pswrddntmatch = $incorrectloginerror= "";
     $firstnameErr = $emailErr = $courseErr = $streamErr = $rollnoErr = $passwordErr = $cnfrmpasswordErr = $email_already_registered  = "";
     if (isset($_POST['signup_btn'])) {
 	    if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -70,7 +70,7 @@
 					$sql = "INSERT INTO userinfo (username, rollno, email, password, course, stream)
 					VALUES ('$username', '$rollno', '$email', '$password', '$course', '$stream')";
 					mysqli_query($con, $sql);	
-					header('location:index.php');
+					$signup_done = "User Created , Please log in : )";
 				
 			}
 		}

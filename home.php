@@ -3,7 +3,6 @@ session_start();
 include 'config.php';
 include 'signup.php';
 include 'login.php';
-include 'action.php';
  ?>
 <!DOCTYPE html>
 <html>

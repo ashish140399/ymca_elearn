@@ -66,8 +66,7 @@ html, body{
 .middle_box_effect{
   box-sizing: border-box;
   background-color: #c5d5cb;
-  width: 90%;
-  margin: 1.3em 5%;
+  margin: 1.2em 5%;
    background-image: radial-gradient( rgba(159, 168, 163, 0) 50%, rgba(159, 168, 163, 0.02) 15%, rgba(159, 168, 163, 0.5) 100%);
 }
 .website_info{
@@ -104,11 +103,17 @@ html, body{
 .form_signup{
   width: 88%;
   margin: 4em 6% 0% 6%;
+  display: none;
 }
 .form_login{
   width: 88%;
   margin: 4em 6% 0% 6%;
   display: none;
+}
+.form_forgot_password{
+  width: 88%;
+  margin: 4em 6% 0% 6%;
+
 }
 
 /* flipper on the left div starting***/
@@ -163,8 +168,21 @@ html, body{
 /* flipper on the left div ending***/
 
 
-@media only screen and (max-width: 410px) {
+@media only screen and (max-width: 425px) {
   .uni_h_left, .uni_h_right{
-    font-size: 1.32em
+    font-size: 1.3em
   }
+  .middle_box_effect{
+    padding-top: 2em;
+  }
+}
+
+.forgot_password{
+  color: #00539C !important;
+  cursor: pointer !important;
+}
+.forgot_passwordinfo{
+  color:#303030;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95em;
 }

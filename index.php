@@ -23,7 +23,7 @@ include 'login.php';
   
 </head>
 <body>
-	<div style="box-sizing: border-box;margin: 0;">
+	<div style="box-sizing: border-box;margin: 0;background: linear-gradient(to right,  #9c9e9f 0%,#9c9e9f 50%,#33ccff 50%,#33ccff 100%);">
 		<div class="university_logo">
 			<img src="logo.png">
 		</div>

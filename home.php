@@ -3,6 +3,7 @@ session_start();
 include 'config.php';
 include 'signup.php';
 include 'login.php';
+include 'action.php';
  ?>
 <!DOCTYPE html>
 <html>
@@ -55,9 +56,13 @@ include 'login.php';
 						</div>
 					</div>
 					<div class="col-sm-3">
+						
 							
 					</div>
 					<div class="col-sm-3">
+						<div id="folder_table">
+							
+						</div>
 						
 					</div>
 					
@@ -66,13 +71,34 @@ include 'login.php';
 		</div>
 	</div>
 <script>
+	
 $(document).ready(function(){
   $(".folder_box1").click(function(){
     $(".loadingcontainer_home").load("B.tech.html");
+	<?php $currentdir = getcwd(); ?>
+    	
   });
 });
 </script>
-
+<script>
+	$(document).ready(function()){
+		load_folder_list();
+		function load_folder_list()
+		{
+			var action = "fetch";
+			$.ajax({
+				url : "action.php",
+				method : "POST",
+				data:{action:action},
+				success:function(data)
+				{
+					$('#folder_table').html(data);
+				}
+			});
+			<?php echo $output; ?>
+		}
+	}
+</script>
 
 </body>
 </html>

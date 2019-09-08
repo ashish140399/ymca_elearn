@@ -17,7 +17,7 @@
   background-color: #e3e0cf;
   width: 50%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   float: left;
   display:inline-block;
   text-align: right;

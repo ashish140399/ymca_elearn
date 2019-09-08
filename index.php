@@ -10,7 +10,7 @@ include 'login.php';
 	<title>YMCA E-Learning</title>
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel="stylesheet" type="text/css" href="style.css">
+  	<link rel="stylesheet" type="text/css" href="style.css?ver=0.2">
   	<!-- bootstrap 4-->
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -20,18 +20,23 @@ include 'login.php';
   	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   	<link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
-  
 </head>
-<body>
-	<div style="box-sizing: border-box;margin: 0;background: linear-gradient(to right,  #9c9e9f 0%,#9c9e9f 50%,#33ccff 50%,#33ccff 100%);">
+<script>
+		$(window).on('load',(function(){$(".loader").fadeOut("slow");}));
+	</script>
+<body style="background: linear-gradient(to right,  #e3e0cf 0%,#e3e0cf 50%,#fff 50%,#fff 100%);">
+	<div class="loader"><div class="rotae"></div></div>
+	<div class="container-fluid">
 		<div class="university_logo">
 			<img src="logo.png">
 		</div>
-		<div class="uni_h_left">
-			YMCA
-		</div>
-		<div class="uni_h_right">
-			eLearning
+		<div class="row">
+			<div class="col-6 uni_h_left pr-5">
+				YMCA
+			</div>
+			<div class="col-6 uni_h_right pl-5">
+				E-learning
+			</div>
 		</div>
 		<div class="middle_box_effect">
 			<div class="row">
@@ -52,7 +57,7 @@ include 'login.php';
 					</div>
 				</div> 
 				<div class="col-sm-6">
-					<div style="margin: 10% 15%; border:2px solid #fff; border-radius: 10px;">
+					<div style="margin: 10% 13%; border:2px solid #fff; border-radius: 10px;">
 						<div class="user_login_img">
 							<img src="login3.png">
 						</div>
@@ -73,6 +78,7 @@ include 'login.php';
 								<input class="form-control my-2" type="password" name="cnfrmpassword" placeholder="Confirm Password" required>
 								<div style="color: red;"><?php echo $pswrddntmatch?></div>
 								<div style="color: red;"><?php echo $email_already_registered?></div>
+								<div style="color: red;"><?php echo $incorrectloginerror?></div>
 							</div>
 							<div style="text-align: center;">	
 								<button type="submit" name="signup_btn" class="btn  btn-outline-info mt-2 mb-3">Sign Up</button>

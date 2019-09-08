@@ -1,6 +1,6 @@
 <?php 
  // define variables and set to empty values
-    $firstname = $email = $lastname = $course = $stream = $rollno = $password = $cnfrmpassword  = $username = $pswrddntmatch = "";
+    $firstname = $email = $lastname = $course = $stream = $rollno = $password = $cnfrmpassword  = $username = $pswrddntmatch = $incorrectloginerror= "";
     $firstnameErr = $emailErr = $courseErr = $streamErr = $rollnoErr = $passwordErr = $cnfrmpasswordErr = $email_already_registered  = "";
     if (isset($_POST['signup_btn'])) {
 	    if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -59,7 +59,7 @@
 			}
 
 			$sql = "SELECT id FROM userinfo WHERE email = '$email'";
-			$result = mysqli_query($con,$sql); 	 
+			$result = mysqli_query($con,$sql); 	  
 			$count = mysqli_num_rows($result);  
 			// If result matched $myusername and $mypassword, table row must be 1 row
 			if($count == 1) {

@@ -13,7 +13,7 @@ html, body{
   
 }
 .rotae{
-  background: url('logo.png') 50% 50% no-repeat rgb(249,249,249);
+  background: url('images/logo.png') 50% 50% no-repeat rgb(249,249,249);
   position: fixed;
   left: 0px;
   top: 0px;
@@ -103,7 +103,6 @@ html, body{
 .form_signup{
   width: 88%;
   margin: 4em 6% 0% 6%;
-  display: none;
 }
 .form_login{
   width: 88%;
@@ -113,6 +112,7 @@ html, body{
 .form_forgot_password{
   width: 88%;
   margin: 4em 6% 0% 6%;
+  display: none;
 
 }
 

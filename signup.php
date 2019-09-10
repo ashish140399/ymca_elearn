@@ -69,7 +69,11 @@
 					$username=$firstname." ".$lastname;
 					$sql = "INSERT INTO userinfo (username, rollno, email, password, course, stream)
 					VALUES ('$username', '$rollno', '$email', '$password', '$course', '$stream')";
-					mysqli_query($con, $sql);	
+					mysqli_query($con, $sql);
+					$_SESSION["username"] = $username;	
+					header("location: home.php");
+
+
 					$signup_done = "User Created , Please log in : )";
 				
 			}
